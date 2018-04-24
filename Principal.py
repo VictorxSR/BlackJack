@@ -1,6 +1,6 @@
 from Joc import *
 from Cartes import *
-import random
+
 import os
 
 cartes = Joc.crearCartes()
@@ -9,11 +9,12 @@ clear = lambda: os.system('clear')
 cartes_jugada = []
 diners = 1000
 aposta = 0
+jugada = 0
 
 while True:
     
 
-    while True:
+    while jugada <= 21:
         print("Jugador\n-----------------\nDiners: " + str(diners))
         print("Aposta: " + str(aposta))
 
@@ -29,7 +30,7 @@ while True:
 
         clear()
 
-        carta = random.choice(cartes)
+        carta = Joc.obtenirCarta(cartes)
         cartes_jugada.append(carta)
       
         jugada += carta.numero
@@ -39,5 +40,12 @@ while True:
         print("\n\nCartes: ")
         Joc.veureCartes(cartes_jugada)
         print("\n\n")
+
+    if menu == '2':
+        print("hola")
+
+
+
+
     if menu == '3':
         aposta, diners = Joc.pujarAposta(aposta, diners)

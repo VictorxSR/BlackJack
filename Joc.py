@@ -1,4 +1,5 @@
 from Cartes import *
+import random
 
 class Joc:
 
@@ -38,3 +39,8 @@ class Joc:
                 return new_aposta + aposta, diners
             else:
                 print("L'aposta no pot ser superior als diners del jugador ni inferior a 1")
+
+
+    def obtenirCarta(cartes):
+        return random.choice(cartes)
+
