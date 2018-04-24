@@ -42,5 +42,9 @@ class Joc:
 
 
     def obtenirCarta(cartes):
-        return random.choice(cartes)
+        carta = random.choice(cartes)
+        cartes.remove(carta)
+        return carta, cartes
+
+    
 

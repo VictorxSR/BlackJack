@@ -30,7 +30,7 @@ while True:
 
         clear()
 
-        carta = Joc.obtenirCarta(cartes)
+        carta, cartes = Joc.obtenirCarta(cartes)
         cartes_jugada.append(carta)
       
         jugada += carta.numero
