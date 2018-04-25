@@ -137,6 +137,9 @@ def startPartida():
         if menu == '3': # augmentar aposta
             aposta, diners = Joc.pujarAposta(aposta, diners) # pujar aposta necesita els diners que tens actualment per poder fer comporvacions 
             clear()
-            situacio(carta, cartes_jugada, jugada)
+            if jugada == 0:
+                print("No es pot apostar sense demanar una carta")
+            else:
+                situacio(carta, cartes_jugada, jugada)
 
 startPartida()

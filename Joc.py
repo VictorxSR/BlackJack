@@ -32,13 +32,19 @@ class Joc:
 
         while True:
             print("Els teus diners: " + str(diners))
-            new_aposta = int(input("Quant vols pujar: "))
 
-            if new_aposta <= diners and new_aposta > 1: # comprovacio de que no apostis mes diners dels que tens i que l'aposta sigui superior a 1
-                diners -= new_aposta # es resta l'aposta dels diners del jugador
-                return new_aposta + aposta, diners # retorna l'aposta que queda i els diners que li queden al jugador
-            else:
-                print("L'aposta no pot ser superior als diners del jugador ni inferior a 1")
+            try:
+                new_aposta = int(input("Quant vols pujar: "))
+                if new_aposta <= diners and new_aposta > 1: # comprovacio de que no apostis mes diners dels que tens i que l'aposta sigui superior a 1
+                    diners -= new_aposta # es resta l'aposta dels diners del jugador
+                    return new_aposta + aposta, diners # retorna l'aposta que queda i els diners que li queden al jugador
+                else:
+                    print("\nL'aposta no pot ser superior als diners del jugador ni inferior a 1\n")
+            except ValueError as e:
+                print("\nNo es poden introduir caracters\n")
+            
+
+            
 
     # obtenir una carta de forma aleatoria
     def obtenirCarta(cartes):
