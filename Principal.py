@@ -78,6 +78,10 @@ def jocBanca(cartes):
             if jugada_banca % 2 == 0:
                 return jugada_banca
 
+        if jugada_banca < 15 and jugada_banca > 12:
+            if jugada_banca % 2 == 0:
+                return jugada_banca
+                
 def situacio(carta, cartes_jugada, jugada):
 
     print("Joc: " + str(jugada) + "\n")
@@ -119,6 +123,9 @@ def startPartida():
             jugada, carta = menu1(cartes,jugada, cartes_jugada, aposta)
 
         if menu == '2':
+
+            if jugada == 0:
+                jugada, carta = menu1(cartes,jugada, cartes_jugada, aposta)
             
             menu2(jugada, aposta,cartes)
 
