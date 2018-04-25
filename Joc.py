@@ -47,4 +47,3 @@ class Joc:
         return carta, cartes
 
     
-
